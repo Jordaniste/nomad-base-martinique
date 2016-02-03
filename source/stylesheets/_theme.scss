@@ -1,0 +1,26 @@
+// Font-size and line-height
+$base-size: 16px;
+$base-height: 1.4;
+
+// Charte graphique
+$gris: #1E375E;
+$orange: #F59936;
+$white: #FFFFFF;
+
+// Backgrounds
+.bg-orange {
+  background-color: #F09941;
+}
+.bg-white {
+  background-color: #FFF;
+}
+.bg-blue {
+  background-color: #195BC3;
+}
+
+h1,
+h3
+{
+  color: $gris;
+  font-weight: bold;
+}
