@@ -7,25 +7,6 @@
 #   config.output_style = :compact
 # end
 
-
-###
-# Page options, layouts, aliases and proxies
-###
-
-# Per-page layout changes:
-#
-# With no layout
-page '/*.xml', layout: false
-page '/*.json', layout: false
-page '/*.txt', layout: false
-
-# With alternative layout
-# page "/path/to/file.html", layout: :otherlayout
-
-# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
-#  which_fake_page: "Rendering a fake page with a local variable" }
-
 # General configuration
 
 ###
@@ -38,7 +19,7 @@ page '/*.txt', layout: false
 # Reload the browser automatically whenever files change
   configure :development do
   activate :livereload
-# end
+end
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -53,21 +34,29 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
-
-
 # Build-specific configuration
 configure :build do
-  # Minify CSS on build
+  # For example, change the Compass output style for deployment
   # activate :minify_css
 
   # Minify Javascript on build
   # activate :minify_javascript
+
+  # Enable cache buster
+  # activate :asset_hash
+
+  # Use relative URLs
+  activate :relative_assets
+  set :relative_links, true
+
+  # Or use a different image path
+  # set :http_prefix, "/Content/images/"
 end
 
 # Deployment
 activate :deploy do |deploy|
   deploy.method = :git
-  deploy.build_before = true
+  deploy.build_before = false
 
   # Optional Settings
   # deploy.remote = 'custom-remote' # remote name or git url, default: origin

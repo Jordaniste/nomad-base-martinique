@@ -1,14 +1,12 @@
-body {
-  background-color: red;
-}
+// body {
+//   background-color: red;
+// }
 #head {
-  background-image: url(source/images/header.jpg);
-  background-color: #1B5DC3;
-}
-
-header {
-  margin-top: 50px;
-  margin-bottom: 100px;
+  background-image: url(/images/header.jpg);
+  color: white;
+  padding: 70px 0;
+  background-size: cover;
+  height: 550px;
 }
 
 #logo {
